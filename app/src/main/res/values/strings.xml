@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ITMO_Android_2019_2020</string>
+    <string name="textview">Enter something</string>
 </resources>
