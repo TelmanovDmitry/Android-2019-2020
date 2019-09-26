@@ -1,5 +1,4 @@
 package com.example.itmo_android_2019_2020;
-import android.os.Build;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +8,7 @@ public class ExpressionParser {
         private String expression;
         private int index;
 
-        private Number val;
+        private Double val;
         private int flag;
 
         private Token curToken;
@@ -51,7 +50,7 @@ public class ExpressionParser {
                 curToken = getToken();
             }
             if (curToken == Token.END) {
-                return new Const(0);
+                return new Const(0.0);
             }
             return addSub(false);
         }
@@ -69,7 +68,7 @@ public class ExpressionParser {
             }
 
             if (Character.isDigit(ch)) {
-                Number c = getConst();
+                Double c = getConst();
                 if (c == null){
                     return Token.END;
                 }
@@ -92,23 +91,16 @@ public class ExpressionParser {
             return false;
         }
 
-        private Number getConst() {
+        private Double getConst() {
             flag = 0;
             int start = index - 1;
             while (index < expression.length() && isCorrectConst()) {
                 index++;
             }
-            if (flag < 1) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    return Integer.parseUnsignedInt(expression.substring(start, index));
-                }
-                return Integer.parseInt(expression.substring(start, index));
-            } else {
-                if (flag >= 2){
-                    return null;
-                }
-                return Double.parseDouble(expression.substring(start, index));
+            if (flag >= 2){
+                return null;
             }
+            return Double.parseDouble(expression.substring(start, index));
         }
 
 
@@ -147,7 +139,7 @@ public class ExpressionParser {
 
             switch (curToken) {
                 case CONST:
-                    Number v = val;
+                    Double v = val;
                     curToken = getToken();
                     return new Const(v);
                 case MINUS:
@@ -159,12 +151,7 @@ public class ExpressionParser {
                     }
                     return e;
                 default:
-                    return new Const(0);
+                    return new Const(0.0);
             }
         }
-
-    @Override
-    public String toString() {
-        return "" + val;
-    }
 }

@@ -5,12 +5,8 @@ public class Neg extends UnarOper {
         super(ex);
     }
 
-    protected int applyInSubclass(int x) {
-        return -x;
-    }
-
     @Override
-    protected double applyInSubclass(double x) {
+    protected double applyInSubclass(Double x) {
         return -x;
     }
 }

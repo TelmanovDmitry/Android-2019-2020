@@ -6,12 +6,7 @@ public class Add extends BinOper {
     }
 
     @Override
-    protected int applyInSubclass(int x, int y) {
-        return x + y;
-    }
-
-    @Override
-    protected double applyInSubclass(double x, double y) {
+    protected double applyInSubclass(Double x, Double y) {
         return x + y;
     }
 }

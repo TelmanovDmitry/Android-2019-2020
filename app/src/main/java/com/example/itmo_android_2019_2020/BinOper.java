@@ -10,15 +10,9 @@ public abstract class BinOper implements CommonExpression {
     }
 
     @Override
-    public int evaluate(int x) {
+    public double evaluate(Double x) {
         return applyInSubclass(l.evaluate(x), r.evaluate(x));
     }
 
-    @Override
-    public double evaluate(double x) {
-        return applyInSubclass(l.evaluate(x), r.evaluate(x));
-    }
-
-    protected abstract double applyInSubclass(double x, double y);
-    protected abstract int applyInSubclass(int x, int y);
+    protected abstract double applyInSubclass(Double x, Double y);
 }

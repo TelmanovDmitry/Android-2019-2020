@@ -9,34 +9,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     private TextView textView;
     private ExpressionParser expressionParser;
 
-    private Button button0;
-    private Button button1;
-    private Button button2;
-    private Button button3;
-    private Button button4;
-    private Button button5;
-    private Button button6;
-    private Button button7;
-    private Button button8;
-    private Button button9;
-    private Button buttonPlus;
-    private Button buttonMinus;
-    private Button buttonMultiply;
-    private Button buttonDivide;
-    private Button buttonDelete;
-    private Button buttonEquals;
-    private Button buttonOpenBracket;
-    private Button buttonCloseBracket;
-    private Button buttonDot;
-    private Button buttonDeleteAll;
-
-    String expression = "";
+    private String expression = "";
+    private String expressionKey = "ex";
 
 
     @Override
@@ -46,26 +29,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         expressionParser = new ExpressionParser();
         textView = findViewById(R.id.textView);
-        button0 = findViewById(R.id.button0);
-        button1 = findViewById(R.id.button1);
-        button2 = findViewById(R.id.button2);
-        button3 = findViewById(R.id.button3);
-        button4 = findViewById(R.id.button4);
-        button5 = findViewById(R.id.button5);
-        button6 = findViewById(R.id.button6);
-        button7 = findViewById(R.id.button7);
-        button8 = findViewById(R.id.button8);
-        button9 = findViewById(R.id.button9);
-        buttonPlus = findViewById(R.id.buttonplus);
-        buttonMinus = findViewById(R.id.buttonminus);
-        buttonMultiply = findViewById(R.id.buttonmultiply);
-        buttonDivide = findViewById(R.id.buttondivide);
-        buttonDelete = findViewById(R.id.buttondelete);
-        buttonEquals = findViewById(R.id.buttonequals);
-        buttonOpenBracket = findViewById(R.id.buttonopenbracket);
-        buttonCloseBracket = findViewById(R.id.buttonclosebracket);
-        buttonDot = findViewById(R.id.buttondot);
-        buttonDeleteAll = findViewById(R.id.buttondeleteall);
+        Button button0 = findViewById(R.id.button0);
+        Button button1 = findViewById(R.id.button1);
+        Button button2 = findViewById(R.id.button2);
+        Button button3 = findViewById(R.id.button3);
+        Button button4 = findViewById(R.id.button4);
+        Button button5 = findViewById(R.id.button5);
+        Button button6 = findViewById(R.id.button6);
+        Button button7 = findViewById(R.id.button7);
+        Button button8 = findViewById(R.id.button8);
+        Button button9 = findViewById(R.id.button9);
+        Button buttonPlus = findViewById(R.id.buttonplus);
+        Button buttonMinus = findViewById(R.id.buttonminus);
+        Button buttonMultiply = findViewById(R.id.buttonmultiply);
+        Button buttonDivide = findViewById(R.id.buttondivide);
+        Button buttonDelete = findViewById(R.id.buttondelete);
+        Button buttonEquals = findViewById(R.id.buttonequals);
+        Button buttonOpenBracket = findViewById(R.id.buttonopenbracket);
+        Button buttonCloseBracket = findViewById(R.id.buttonclosebracket);
+        Button buttonDot = findViewById(R.id.buttondot);
+        Button buttonDeleteAll = findViewById(R.id.buttondeleteall);
 
         textView.setMovementMethod(new ScrollingMovementMethod());
         textView.setTextIsSelectable(true);
@@ -93,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
-        outState.putString("ex", expression);
+        outState.putString(expressionKey, expression);
         super.onSaveInstanceState(outState);
 
     }
@@ -101,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        expression = savedInstanceState.getString("ex");
+        expression = savedInstanceState.getString(expressionKey);
         textView.setText(expression);
     }
 
@@ -165,8 +148,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 textView.setText(expression);
                 break;
             case R.id.buttonequals:
-                expression = "" + expressionParser.parse(expression).evaluate(0.0);
-                if (expression.charAt(expression.length() - 1) == '0' && expression.charAt(expression.length() - 2) == '.'){
+                expression = "" + BigDecimal.valueOf(expressionParser.parse(expression)
+                      .evaluate(0.0)).setScale(14, RoundingMode.HALF_UP).doubleValue();
+                if (expression.charAt(expression.length() - 1) == '0' &&
+                        expression.charAt(expression.length() - 2) == '.'){
                     expression = expression.substring(0, expression.length() - 2);
                 }
                 textView.setText(expression);
@@ -193,6 +178,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 expression = "";
                 textView.setText(expression);
         }
-
     }
 }
