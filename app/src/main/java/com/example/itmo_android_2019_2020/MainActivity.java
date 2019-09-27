@@ -9,24 +9,32 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    private boolean switched = true;
+    private boolean switched = false;
     private String switchKey = "isSwitched";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (savedInstanceState != null){
+            switched = savedInstanceState.getBoolean(switchKey);
+        }
+        if (switched) {
+            setTheme(R.style.AppThemeDracula);
+        } else {
+            setTheme(R.style.AppTheme);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View s) {
-                if (switched) {
-                    getApplication().setTheme(R.style.AppThemeDracula);
+            public void onClick(View v) {
+                if(switched){
                     switched = false;
+                    recreate();
                 } else {
-                    getApplication().setTheme(R.style.AppTheme);
                     switched = true;
+                    recreate();
                 }
             }
         });

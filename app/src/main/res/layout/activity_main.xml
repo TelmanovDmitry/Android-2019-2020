@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/AppThemeDracula"
     tools:context=".MainActivity">
 
     <ImageView
@@ -89,6 +88,7 @@
         android:orientation="horizontal"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
+        android:theme="@style/AppThemeDracula"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2">
@@ -129,7 +129,6 @@
         android:layout_height="86dp"
         android:gravity="center"
         android:text="32°c"
-        android:textColor="@color/colorVoidBlack"
         android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -144,7 +143,6 @@
         android:layout_height="55dp"
         android:gravity="center"
         android:text="@string/saint_petersburg_russia_n_cloudy"
-        android:textColor="@color/colorVoidBlack"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -155,7 +153,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Switch"
-        android:theme="@style/AppThemeDracula"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
