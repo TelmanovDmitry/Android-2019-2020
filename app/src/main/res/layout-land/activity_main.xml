@@ -6,11 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Switch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="258dp"
-        android:layout_height="357dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="222dp"
+        android:layout_height="279dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/weather_icon1" />
@@ -19,8 +28,7 @@
         android:id="@+id/imageView8"
         android:layout_width="69dp"
         android:layout_height="69dp"
-        android:layout_marginBottom="35dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toStartOf="@+id/imageView9"
         app:layout_constraintStart_toEndOf="@+id/imageView7"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout1"
@@ -30,10 +38,9 @@
         android:id="@+id/imageView4"
         android:layout_width="69dp"
         android:layout_height="69dp"
-        android:layout_marginBottom="35dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toStartOf="@+id/imageView5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout1"
         app:srcCompat="@mipmap/weather_icons_cloud" />
 
@@ -41,8 +48,7 @@
         android:id="@+id/imageView5"
         android:layout_width="69dp"
         android:layout_height="69dp"
-        android:layout_marginBottom="35dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toStartOf="@+id/imageView6"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout1"
@@ -52,8 +58,7 @@
         android:id="@+id/imageView6"
         android:layout_width="69dp"
         android:layout_height="69dp"
-        android:layout_marginBottom="35dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toStartOf="@+id/imageView7"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout1"
@@ -63,19 +68,18 @@
         android:id="@+id/imageView7"
         android:layout_width="69dp"
         android:layout_height="69dp"
-        android:layout_marginBottom="35dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toStartOf="@+id/imageView8"
         app:layout_constraintStart_toEndOf="@+id/imageView6"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout1"
         app:srcCompat="@mipmap/weather_icons_thunder" />
 
+
     <ImageView
         android:id="@+id/imageView9"
         android:layout_width="69dp"
         android:layout_height="69dp"
-        android:layout_marginBottom="35dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView8"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout1"
@@ -83,15 +87,20 @@
 
     <LinearLayout
         android:id="@+id/linearLayout1"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="75dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="75dp"
         android:orientation="horizontal"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:theme="@style/AppThemeDracula"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/button">
 
         <ImageView
             android:id="@+id/imageView0"
@@ -127,35 +136,27 @@
         android:id="@+id/textView"
         android:layout_width="127dp"
         android:layout_height="86dp"
+        android:layout_marginLeft="60dp"
         android:gravity="center"
         android:text="32°c"
         android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1" />
-
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="273dp"
-        android:layout_height="55dp"
+        android:layout_width="297dp"
+        android:layout_height="91dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="5dp"
         android:gravity="center"
         android:text="@string/saint_petersburg_russia_n_cloudy"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout1"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Switch"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
