@@ -21,7 +21,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/weather_icon1" />
+        app:srcCompat="@drawable/weather_icon1" />
 
     <ImageView
         android:id="@+id/imageView8"
@@ -32,7 +32,7 @@
         app:layout_constraintEnd_toStartOf="@+id/imageView9"
         app:layout_constraintStart_toEndOf="@+id/imageView7"
         app:layout_constraintTop_toBottomOf="@+id/imageView0"
-        app:srcCompat="@mipmap/weather_icons_thunder" />
+        app:srcCompat="@drawable/weather_icons_thunder" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -43,7 +43,7 @@
         app:layout_constraintEnd_toStartOf="@+id/imageView5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView15"
-        app:srcCompat="@mipmap/weather_icons_cloud" />
+        app:srcCompat="@drawable/weather_icons_cloud" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -54,7 +54,7 @@
         app:layout_constraintEnd_toStartOf="@+id/imageView6"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/imageView15"
-        app:srcCompat="@mipmap/weather_icons_really_rainy" />
+        app:srcCompat="@drawable/weather_icons_really_rainy" />
 
     <ImageView
         android:id="@+id/imageView6"
@@ -65,7 +65,7 @@
         app:layout_constraintEnd_toStartOf="@+id/imageView7"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
         app:layout_constraintTop_toBottomOf="@+id/imageView16"
-        app:srcCompat="@mipmap/weather_icons_snowy" />
+        app:srcCompat="@drawable/weather_icons_snowy" />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -76,7 +76,7 @@
         app:layout_constraintEnd_toStartOf="@+id/imageView8"
         app:layout_constraintStart_toEndOf="@+id/imageView6"
         app:layout_constraintTop_toBottomOf="@+id/imageView16"
-        app:srcCompat="@mipmap/weather_icons_thunder" />
+        app:srcCompat="@drawable/weather_icons_thunder" />
 
 
     <ImageView
@@ -88,7 +88,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView8"
         app:layout_constraintTop_toBottomOf="@+id/imageView0"
-        app:srcCompat="@mipmap/weather_icon1" />
+        app:srcCompat="@drawable/weather_icon1" />
 
     <ImageView
         android:id="@+id/imageView0"
@@ -98,7 +98,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView16"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:srcCompat="@mipmap/humidity" />
+        app:srcCompat="@drawable/humidity" />
 
     <ImageView
         android:id="@+id/imageView15"
@@ -108,7 +108,7 @@
         app:layout_constraintEnd_toStartOf="@+id/imageView16"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:srcCompat="@mipmap/wind_blowing" />
+        app:srcCompat="@drawable/wind_blowing" />
 
     <ImageView
         android:id="@+id/imageView16"
@@ -118,7 +118,7 @@
         app:layout_constraintEnd_toStartOf="@+id/imageView0"
         app:layout_constraintStart_toEndOf="@+id/imageView15"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:srcCompat="@mipmap/weather_17" />
+        app:srcCompat="@drawable/weather_17" />
 
 
     <TextView
@@ -216,7 +216,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
-        android:text="Mn"
+        android:text="@string/monday"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
         app:layout_constraintEnd_toStartOf="@+id/imageView5" />
@@ -225,7 +225,7 @@
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tu"
+        android:text="@string/tuesday"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView5"
         app:layout_constraintEnd_toEndOf="@+id/imageView5" />
@@ -235,7 +235,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
-        android:text="Wd"
+        android:text="@string/wednesday"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView6"
         app:layout_constraintEnd_toStartOf="@+id/imageView7" />
@@ -244,7 +244,7 @@
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fr"
+        android:text="@string/thursday"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView7"
         app:layout_constraintEnd_toEndOf="@+id/imageView7" />
@@ -253,7 +253,7 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Th"
+        android:text="@string/friday"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView8"
         app:layout_constraintEnd_toEndOf="@+id/imageView8" />
@@ -263,7 +263,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
-        android:text="Sa"
+        android:text="@string/saturday"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView9"
         app:layout_constraintEnd_toEndOf="@+id/imageView9" />
