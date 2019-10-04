@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Weather</string>
     <string name="saint_petersburg_russia_n_cloudy">Saint-Petersburg Russia \nSnow and Sun</string>
+    <string name="switchButton">Switch</string>
+    <string name="temp">32°c</string>
+    <string name="wind_flow">Wind Flow</string>
+    <string name="perception">Perception</string>
+    <string name="humidity">Humidity</string>
 </resources>
